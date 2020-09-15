@@ -27,20 +27,28 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-fc40294182738674c72b.js"
+    "url": "webpack-runtime-514bd93c2c58011e95c5.js"
   },
   {
     "url": "framework-2aff3dd42eb60cb6c774.js"
   },
   {
-    "url": "app-fb1aabd756b2ba150c9a.js"
+    "url": "app-8bf63ffde3af3acf8d2f.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-9215760f68306f1b85fe.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "32ec501930bef9fd9a106473468111c6"
+    "revision": "17154d0f17704c475a50b89f2dd07487"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "c355c8040c47a63bfb3360e4b7cb6553"
+  },
+  {
+    "url": "page-data/app-data.json",
+    "revision": "5458e965d4c2da5d1f2fb6e8638c0be0"
   },
   {
     "url": "manifest.json",
@@ -48,7 +56,7 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "e15c0f2a9ccaab5fa78d92d361bd4854"
+    "revision": "d9644eb13da230120559d3a55d8a8d49"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -136,12 +144,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/akhatua2.github.io`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-fb1aabd756b2ba150c9a.js`))) {
+  if (!resources || !(await caches.match(`/akhatua2.github.io/app-8bf63ffde3af3acf8d2f.js`))) {
     return await fetch(event.request)
   }
 
@@ -154,7 +162,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/akhatua2.github.io/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
