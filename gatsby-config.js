@@ -2,6 +2,7 @@ const config = require('./src/config');
 const theme = require('./src/styles/Theme')
 
 module.exports = {
+  pathPrefix: "/akhatua2.github.io",
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
