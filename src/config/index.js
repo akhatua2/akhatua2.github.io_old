@@ -10,11 +10,6 @@ module.exports = {
 
     splashScreen: false, // Set this to true if you want to use the splash screen
 
-    // You can create your own Medium feed with this rss to json converter: https://rss2json.com/
-    // To access your Medium RSS feed, just replace this url with your username: https://medium.com/feed/@{yourname}
-    
-    // There are icons available for the following platforms: 
-    // Medium, GitHub, LinkedIn, XING, Behance
     socialMedia: [
         {
             name: "Linkedin",
@@ -26,7 +21,7 @@ module.exports = {
         },
         {
             name: "Resume",
-            url: "https://www.behance.net/konstanmnster"
+            url: "https://github.com/akhatua2"
         },
     ],
   
@@ -37,7 +32,7 @@ module.exports = {
                 url: "/#about",
             },
             {
-                name: "Features",
+                name: "Projects",
                 url: "/#projects",
             },
         ],
